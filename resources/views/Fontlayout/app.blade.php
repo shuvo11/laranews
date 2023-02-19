@@ -37,7 +37,7 @@
       </div>
     </div>
     
-    @include('Fontlayout.Header')
+    @include('Fontlayout.Footer')
 
 
 

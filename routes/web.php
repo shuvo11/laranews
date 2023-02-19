@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FontviewConteoller;
-
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +31,8 @@ Route::get('/business', [FontviewConteoller::class, 'business']);
 Route::get('/arts', [FontviewConteoller::class, 'arts']);
 
 Route::get('/contact', [FontviewConteoller::class, 'contact']);
+
+
+Route::get('/admin', [AdminController::class, 'adminpage']);
+
+Route::get('/login', [AdminController::class, 'Login']);
