@@ -1,83 +1,110 @@
 <!DOCTYPE html>
+<html dir="ltr" lang="en">
 
-<html lang="en">
-	<!--begin::Head-->
-	<head><base href="../">
-		<title>Laranews &amp; Laravel by shuvo</title>
-		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
-		<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta charset="utf-8" />
-		<meta property="og:locale" content="en_US" />
-		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
-		
-		<meta property="og:site_name" content="shuvo | Metronic" />
-		
-		<link rel="shortcut icon" href="{{URL::to('/assets/media/logos/logo.png')}}" />
-		<!--begin::Fonts-->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-		<!--end::Fonts-->
-		<!--begin::Page Vendor Stylesheets(used by this page)-->
-		<link href="{{URL::to('/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" />
-		<!--end::Page Vendor Stylesheets-->
-		<!--begin::Global Stylesheets Bundle(used by all pages)-->
-		<link href="{{URL::to('/assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{URL::to('/assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
-		<!--end::Global Stylesheets Bundle-->
-	</head>
-	<!--end::Head-->
-	<!--begin::Body-->
-	<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
-		<!--begin::Main-->
-		<!--begin::Root-->
-		<div class="d-flex flex-column flex-root">
-			<!--begin::Page-->
-			<div class="page d-flex flex-row flex-column-fluid">
-				<!--begin::Aside-->
-			@include('Backendlayout.Asidemenu')
-				<!--end::Aside-->
-				<!--begin::Wrapper-->
-				<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-					<!--begin::Header-->
-                @include('Backendlayout.Header')
-			        <!--end::Header-->
-					<!--begin::Content-->
-					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{URL::to('/assets/images/favicon.png')}}">
+    <title>Freedash Template - The Ultimate Multipurpose admin template</title>
+    <!-- Custom CSS -->
+    <link href="{{URL::to('/assets/extra-libs/c3/c3.min.css')}}" rel="stylesheet">
+    <link href="{{URL::to('/assets/libs/chartist/dist/chartist.min.css')}}" rel="stylesheet">
+    <link href="{{URL::to('/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="{{URL::to('/dist/css/style.min.css')}}" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
 
-				@yield('content')
-					
-					</div>
-					<!--end::Content-->
-					<!--begin::Footer-->
-				@include('Backendlayout.Footer')
-					<!--end::Footer-->
-				</div>
-				<!--end::Wrapper-->
-			</div>
-			<!--end::Page-->
-		</div>
-		<!--end::Root-->
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+		@include('Backendlayout.Header')
 	
-
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+		@include('Backendlayout.Asidemenu')
+	
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+			@yield('content')
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+			@include('Backendlayout.Footer')
 		
-		<!--end::Main-->
-		<script>var hostUrl = "assets/";</script>
-		<!--begin::Javascript-->
-		<!--begin::Global Javascript Bundle(used by all pages)-->
-		<script src="{{URL::to('/assets/plugins/global/plugins.bundle.js')}}"></script>
-		<script src="{{URL::to('/assets/js/scripts.bundle.js')}}"></script>
-		<!--end::Global Javascript Bundle-->
-		<!--begin::Page Vendors Javascript(used by this page)-->
-		<script src="{{URL::to('/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js')}}"></script>
-		<!--end::Page Vendors Javascript-->
-		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="{{URL::to('/assets/js/custom/widgets.js')}}"></script>
-		<script src="{{URL::to('/assets/js/custom/apps/chat/chat.js')}}"></script>
-		<script src="{{URL::to('/assets/js/custom/modals/create-app.js')}}"></script>
-		<script src="{{URL::to('/assets/js/custom/modals/upgrade-plan.js')}}"></script>
-		<!--end::Page Custom Javascript-->
-		<!--end::Javascript-->
-	</body>
-	<!--end::Body-->
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="{{URL::to('/assets/libs/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{URL::to('/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- apps -->
+    <!-- apps -->
+    <script src="{{URL::to('/dist/js/app-style-switcher.js')}}"></script>
+    <script src="{{URL::to('/dist/js/feather.min.js')}}"></script>
+    <script src="{{URL::to('/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
+    <script src="{{URL::to('/dist/js/sidebarmenu.js')}}"></script>
+    <!--Custom JavaScript -->
+    <script src="{{URL::to('/dist/js/custom.min.js')}}"></script>
+    <!--This page JavaScript -->
+    <script src="{{URL::to('/assets/extra-libs/c3/d3.min.js')}}"></script>
+    <script src="{{URL::to('/assets/extra-libs/c3/c3.min.js')}}"></script>
+    <script src="{{URL::to('/assets/libs/chartist/dist/chartist.min.js')}}"></script>
+    <script src="{{URL::to('/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>
+    <script src="{{URL::to('/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js')}}"></script>
+    <script src="{{URL::to('/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js')}}"></script>
+    <script src="{{URL::to('/dist/js/pages/dashboards/dashboard1.min.js')}}"></script>
+</body>
+
 </html>

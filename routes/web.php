@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FontviewConteoller;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoriesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +37,13 @@ Route::get('/contact', [FontviewConteoller::class, 'contact']);
 Route::get('/admin', [AdminController::class, 'adminpage']);
 
 Route::get('/login', [AdminController::class, 'Login']);
+
+
+
+Route::get('/Category', [CategoriesController::class, 'create'])->name('Category');
+
+Route::post('/store', [CategoriesController::class, 'store'])->name('store');
+Route::get('/index', [CategoriesController::class, 'index'])->name('index');
+
+
+
