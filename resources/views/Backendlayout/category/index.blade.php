@@ -24,8 +24,10 @@
                                             <tr>
                                                 <th scope="row">{{ $categorys->id }}</th>
                                                 <td>{{ $categorys->name }}</td>
+                                                <td>{{ $categorys->description }}</td>
                                                 <td>{{ $categorys->published }}</td>
-                                                <td><button type="button" class="btn btn-primary">Edit</button><button type="button" class="btn btn-danger">Delete</button>
+                                                <td> <button type="submit" class="btn btn-primary"><a href="{{ route ('edit', $categorys->id) }}">Edit</a></button><br>
+                                                <button type="button" class="btn btn-danger">Delete</button> </td>
                                             </tr>
                                             @endforeach
                                         

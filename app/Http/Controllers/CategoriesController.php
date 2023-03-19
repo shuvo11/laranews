@@ -31,6 +31,7 @@ class CategoriesController extends Controller
     {
         $category = new Category;
         $category->name = $request->input('name');
+        $category->description = $request->input('description');
         $category->published = $request->input('published', false);
         $category->save();
         return redirect()->route('index');
@@ -47,9 +48,13 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $category = Category::findOrFail($id);
+       
+      
+    return view('Backendlayout.category.edit',compact('category','id'));
+       
     }
 
     /**

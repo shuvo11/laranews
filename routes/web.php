@@ -44,6 +44,6 @@ Route::get('/Category', [CategoriesController::class, 'create'])->name('Category
 
 Route::post('/store', [CategoriesController::class, 'store'])->name('store');
 Route::get('/index', [CategoriesController::class, 'index'])->name('index');
-
+Route::get('/edit/{id}', [CategoriesController::class, 'edit'])->name('edit');
 
 
