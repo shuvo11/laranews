@@ -69,7 +69,7 @@
                           <a class="nav-link" href="{{asset('/')}}">Home</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{asset('/magazine')}}">MAGAZINE</a>
+                          <a class="nav-link" href="{{asset('/magazine')}}">{{ $categories->name }}</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="{{asset('/business')}}">Business</a>
@@ -88,6 +88,14 @@
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="{{asset('/contact')}}">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                    
+                        @foreach ($Category as $Categorys)
+                          <p>{{ $Categorys->name }}</p>
+                          
+                      @endforeach
+                     
                         </li>
                       </ul>
                     </div>

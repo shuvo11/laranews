@@ -43,9 +43,15 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        $categories = DB::table('categories')->find($id);
+
+       
+       
+        return view('Fontlayout.Home',['categories' => $categories]);
+
+    
     }
 
     /**
@@ -82,7 +88,7 @@ class CategoriesController extends Controller
                 ]);
 
             
-            return redirect('/Category')
+            return redirect('/index')
             ->with('success','Category updated');
        
     }
@@ -94,7 +100,7 @@ class CategoriesController extends Controller
     {
         DB::table('categories')->where('id',$id)->delete();
 
-        return redirect('/Category')
+        return redirect('/index')
             ->with('success','Country deleted');
     }
 }

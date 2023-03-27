@@ -11,11 +11,11 @@
                                 aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
                                     class="hide-menu">Category </span></a>
                             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                <li class="sidebar-item"><a href="form-inputs.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="{{route ('Category')}}" class="sidebar-link"><span
                                             class="hide-menu"> Create
                                         </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="form-input-grid.html" class="sidebar-link"><span
+                                <li class="sidebar-item"><a href="{{route ('index')}}" class="sidebar-link"><span
                                             class="hide-menu"> All Category
                                         </span></a>
                                 </li>

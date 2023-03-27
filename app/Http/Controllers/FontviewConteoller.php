@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use App\Models\Category;
 
 class FontviewConteoller extends Controller
 {
     function show(){
-
-        return view('Fontlayout.Home');
+    
+        $Category = DB::table('categories')->get();
+        return view('Fontlayout.Home',['Category' => $Category]);
     }
 
     function travel(){
