@@ -7,7 +7,7 @@
     <h1>Create Category</h1>
     <hr>
     
-    <form action="{{ route ('edit',$category->id) }}" method="POST">
+    <form action="{{ route ('update',$category->id) }}" method="POST">
         @csrf
 
          <div class="col-md-6">

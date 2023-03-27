@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Category;
 
@@ -12,6 +12,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
+     
         $category = Category::all();
         return view('Backendlayout.category.index',compact('category'));
     }
@@ -20,7 +21,9 @@ class CategoriesController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
+
     {
+      
        return view('Backendlayout.category.create');
     }
 
@@ -60,16 +63,38 @@ class CategoriesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+
+            $request->validate([
+                'name' => 'required',
+                'description' => 'required',
+                
+            ]);
+            
+
+
+           DB::table('categories')
+                ->where('id',$id)
+                ->update([
+                    'name' => $request->name,
+                    'description' => $request->description,
+                ]);
+
+            
+            return redirect('/Category')
+            ->with('success','Category updated');
+       
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        DB::table('categories')->where('id',$id)->delete();
+
+        return redirect('/Category')
+            ->with('success','Country deleted');
     }
 }

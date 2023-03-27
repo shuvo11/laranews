@@ -27,7 +27,7 @@
                                                 <td>{{ $categorys->description }}</td>
                                                 <td>{{ $categorys->published }}</td>
                                                 <td> <button type="submit" class="btn btn-primary"><a href="{{ route ('edit', $categorys->id) }}">Edit</a></button><br>
-                                                <button type="button" class="btn btn-danger">Delete</button> </td>
+                                                <button type="button" class="btn btn-danger"><a href="{{ route ('destroy', $categorys->id) }}">Delete</a></button> </td>
                                             </tr>
                                             @endforeach
                                         

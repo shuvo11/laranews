@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FontviewConteoller;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,5 +46,11 @@ Route::get('/Category', [CategoriesController::class, 'create'])->name('Category
 Route::post('/store', [CategoriesController::class, 'store'])->name('store');
 Route::get('/index', [CategoriesController::class, 'index'])->name('index');
 Route::get('/edit/{id}', [CategoriesController::class, 'edit'])->name('edit');
+Route::post('/update/{id}', [CategoriesController::class, 'update'])->name('update');
+Route::get('/destroy/{id}', [CategoriesController::class, 'destroy'])->name('destroy');
+
+Route::post('/auth', [AuthController::class, 'adminauth'])->name('auth');
+
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
