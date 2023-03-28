@@ -65,11 +65,18 @@
                             <i class="mdi mdi-close"></i>
                           </button>
                         </li>
+                        @foreach ($Category as $Categorys)
                         <li class="nav-item active">
-                          <a class="nav-link" href="{{asset('/')}}">Home</a>
+                        
+                      
+                       
+                          <a class="nav-link" href="{{asset('/')}}">{{ $Categorys->name }}</a>
+
+                      
                         </li>
+                        @endforeach
                         <li class="nav-item">
-                          <a class="nav-link" href="{{asset('/magazine')}}">{{ $categories->name }}</a>
+                          <a class="nav-link" href="{{asset('/magazine')}}">Magazine</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="{{asset('/business')}}">Business</a>
@@ -89,14 +96,7 @@
                         <li class="nav-item">
                           <a class="nav-link" href="{{asset('/contact')}}">Contact</a>
                         </li>
-                        <li class="nav-item">
-                    
-                        @foreach ($Category as $Categorys)
-                          <p>{{ $Categorys->name }}</p>
-                          
-                      @endforeach
                      
-                        </li>
                       </ul>
                     </div>
                   </div>

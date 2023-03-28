@@ -10,45 +10,45 @@ use App\Models\Category;
 
 class FontviewConteoller extends Controller
 {
-    function show(){
+    public function show(){
     
         $Category = DB::table('categories')->get();
         return view('Fontlayout.Home',['Category' => $Category]);
     }
 
-    function travel(){
-
-        return view('Fontlayout.Travel');
+    public  function travel(){
+        $Category = DB::table('categories')->get();
+        return view('Fontlayout.Travel',['Category' => $Category]);
     }
 
 
-    function sports(){
+    public function sports(){
 
         return view('Fontlayout.Sports');
     }
 
 
-    function politics(){
+    public  function politics(){
 
         return view('Fontlayout.Politics');
     }
 
-    function magazine(){
+    public  function magazine(){
 
         return view('Fontlayout.Magazine');
     }
 
-    function business(){
+    public  function business(){
 
         return view('Fontlayout.business');
     }
 
-    function arts(){
+    public function arts(){
 
         return view('Fontlayout.arts');
     }
 
-    function contact(){
+    public  function contact(){
 
         return view('Fontlayout.Contact');
     }

@@ -40,19 +40,7 @@ class CategoriesController extends Controller
         return redirect()->route('index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show()
-    {
-        $categories = DB::table('categories')->find($id);
-
-       
-       
-        return view('Fontlayout.Home',['categories' => $categories]);
-
-    
-    }
+ 
 
     /**
      * Show the form for editing the specified resource.
