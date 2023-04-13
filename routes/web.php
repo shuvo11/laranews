@@ -49,6 +49,11 @@ Route::get('/edit/{id}', [CategoriesController::class, 'edit'])->name('edit');
 Route::post('/update/{id}', [CategoriesController::class, 'update'])->name('update');
 Route::get('/destroy/{id}', [CategoriesController::class, 'destroy'])->name('destroy');
 
+Route::get('/Category.publish/{id}', [CategoriesController::class, 'publish'])->name('Category.publish');
+Route::get('/Category.unpublish/{id}', [CategoriesController::class, 'unpublish'])->name('Category.unpublish');
+
+
+
 Route::post('/auth', [AuthController::class, 'adminauth'])->name('auth');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

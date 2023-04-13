@@ -12,7 +12,9 @@ class FontviewConteoller extends Controller
 {
     public function show(){
     
-        $Category = DB::table('categories')->get();
+        $Category = DB::table('categories')
+        ->where('published',1)
+        ->get();
         return view('Fontlayout.Home',['Category' => $Category]);
     }
 
@@ -29,8 +31,8 @@ class FontviewConteoller extends Controller
 
 
     public  function politics(){
-
-        return view('Fontlayout.Politics');
+        $Category = DB::table('categories')->get();
+        return view('Fontlayout.Politics',['Category' => $Category]);
     }
 
     public  function magazine(){

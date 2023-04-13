@@ -91,4 +91,61 @@ class CategoriesController extends Controller
         return redirect('/index')
             ->with('success','Country deleted');
     }
+
+
+
+
+
+    // public function publish($id)
+    // {
+       
+    //    $data = Category::find($id)->update(['published' => false]);
+
+    //     // DB::table('categories')
+    //     // ->where('id',$id)
+    //     // ->updateOrInsert(['published' => '1']);
+
+    //     return redirect('/index')->with('success','Category publish');
+    // }
+    
+
+    // public function unpublish($id)
+    // {
+       
+    //     $data = Category::find($id)->update(['published' => true]);
+
+    //     // DB::table('categories')
+    //     // ->where('id',$id)
+    //     // ->updateOrInsert(['published' => '1']);
+
+    //     // dd($data);
+    //     return redirect('/index')->with('success','Category unpublish');
+    // }
+
+
+    public function publish($id)
+    {
+       
+        DB::table('categories')
+        ->where('id',$id)
+        ->update(['published' => 0]);
+        return redirect('/index')->with('success', 'Category published successfully.');
+    }
+
+    public function unpublish($id)
+    {
+        DB::table('categories')
+        ->where('id',$id)
+        ->update(['published' => 1]);
+        return redirect('/index')->with('success', 'Category published successfully.');
+    }
+
+
+
+
+
+
+
+
+
 }

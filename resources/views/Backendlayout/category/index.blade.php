@@ -15,8 +15,8 @@
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Category Name</th>
+                                                <th scope="col">Slug Description</th>
                                                 <th scope="col">PublishStatus</th>
-                                                <th scope="col">Button</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -25,9 +25,43 @@
                                                 <th scope="row">{{ $categorys->id }}</th>
                                                 <td>{{ $categorys->name }}</td>
                                                 <td>{{ $categorys->description }}</td>
-                                                <td>{{ $categorys->published }}</td>
-                                                <td> <button type="submit" class="btn btn-primary"><a href="{{ route ('edit', $categorys->id) }}">Edit</a></button><br>
-                                                <button type="button" class="btn btn-danger"><a href="{{ route ('destroy', $categorys->id) }}">Delete</a></button> </td>
+                                                <td>{{ $categorys->published }}
+                                                <div>
+                
+
+                                                @if($categorys->published == 1)
+
+                                                <span class="badge badge-success">Published</span>
+                                                    @else
+                                                        <span class="badge badge-danger">Unpublished</span>
+                                                    @endif
+                                                </div>
+
+                                             </td>
+
+
+
+
+
+                                             <td>
+                                                    @if($categorys->published == 1)
+                                              
+                                                       
+                                                        <a href="{{ route ('Category.publish', $categorys->id) }}"><button type="submit" class="btn btn-sm btn-success">publish</button></a>
+                                                  
+                                                    @else
+                                                 
+                                                            
+                                                    <a href="{{ route ('Category.unpublish', $categorys->id) }}"><button type="submit" class="btn btn-sm btn-danger">unpublish</button></a>
+                                                  
+                                                            @endif
+                                                    </td>
+          
+
+ 
+                                                </td>
+                                                <td> <a type="submit" class="btn btn-primary" href="{{ route ('edit', $categorys->id) }}">Edit</a><br>
+                                                <a type="button" class="btn btn-danger" href="{{ route ('destroy', $categorys->id) }}">Delete</a> </td>
                                             </tr>
                                             @endforeach
                                         
@@ -39,6 +73,8 @@
              
                          </div>
 
+
+                         <script>
 
 
 
